@@ -226,6 +226,9 @@ This allows for country-specific data retention policies to be respected, and to
     $ cd directory-forms-api-client
     # [create your virtual environment and activate it]
     $ pip install -e . # install the requirements defined in setup.py
+    $ pip install pre-commit
+    # Install the pre-commit and commit-msg hooks
+    $ pre-commit install --install-hooks --overwrite -t commit-msg -t pre-commit
 
 ### Testing
 
