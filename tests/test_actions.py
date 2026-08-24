@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from unittest import mock
 
 import pytest
@@ -413,7 +413,7 @@ def test_gov_notify_letter_action_mixin_action_class(
 
 def test_hcsat_submission_action_mixin_action_class(form_session, spam_control, sender):
     mock_client = mock.Mock(spec_set=client.APIFormsClient)
-    dtm = datetime.now()
+    dtm = datetime.now(tz=timezone.utc)
     action = actions.HCSatAction(
         client=mock_client,
         form_url='/the/form/',
@@ -506,7 +506,7 @@ def test_unverified_reminder_action_mixin_action_class(
         form_url='/the/form/',
         form_session=form_session,
     )
-    dtm = datetime.now()
+    dtm = datetime.now(tz=timezone.utc)
     data = {
         'email_address': 'test@test.com',
         'deletion_date': dtm,

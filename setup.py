@@ -1,9 +1,7 @@
 """
 Directory Forms API client
 """
-
 from setuptools import find_packages, setup
-
 
 with open("README.md", encoding="utf-8") as f:
     long_description = f.read()

@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from unittest import mock
 
 import pytest
@@ -440,7 +440,7 @@ def test_hcsat_submission_action(
         )
         service_specific_feedback_other = fields.CharField()
 
-    dtm = datetime.now()
+    dtm = datetime.now(tz=timezone.utc)
 
     data = {
         'id': 1,
