@@ -36,6 +36,8 @@ setup(
             'setuptools',
             'twine',
             'wheel>=0.34.2,<1.0.0',
+            'ruff==0.16.1',
+            'pre-commit-hooks==6.0.0',
             'psycopg2',
         ]
     },
