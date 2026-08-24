@@ -1,11 +1,14 @@
 import abc
+from xmlrpc import client
 
 from directory_forms_api_client.client import get_forms_api_client
 
 
 class AbstractAction(abc.ABC):
 
-    def __init__(self, form_url, client=get_forms_api_client(), form_session=None, sender=None, spam_control=None):
+    def __init__(self, form_url, client=None, form_session=None, sender=None, spam_control=None):
+        if client is None:
+            client = get_forms_api_client()
         self.form_url = form_url
         self.client = client
         self.form_session = form_session

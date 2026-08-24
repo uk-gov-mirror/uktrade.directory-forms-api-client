@@ -1,12 +1,15 @@
-from directory_forms_api_client import __version__
+from typing import ClassVar
+
 from directory_client_core.base import AbstractAPIClient
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 
+from directory_forms_api_client import __version__
+
 
 class APIFormsClient(AbstractAPIClient):
 
-    endpoints = {
+    endpoints: ClassVar[dict[str, str]] = {
         # API V1 endpoints
         'ping': 'api/healthcheck/ping/',
         'submission': 'api/submission/',
@@ -16,6 +19,7 @@ class APIFormsClient(AbstractAPIClient):
         'hcsat_feedback_submission': 'api/v2/hcsat-feedback-submission/',
         'verification_reminders': 'api/v2/verification-reminders/',
     }
+
     version = __version__
 
     # API V1
