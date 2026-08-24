@@ -1,7 +1,6 @@
 from unittest import TestCase
 
 from directory_forms_api_client import __version__
-
 from directory_forms_api_client.client import APIFormsClient
 from tests import basic_authenticator, stub_request
 
