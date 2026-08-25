@@ -51,7 +51,7 @@ class FormSessionMixin:
 
     def dispatch(self, request, *args, **kwargs):
         self.form_session = self.form_session_class(request=request)
-        return super().dispatch(request=request, *args, **kwargs)
+        return super().dispatch(request, *args, **kwargs)
 
     def get(self, *args, **kwargs):
         if not self.form_session.ingress_url:

@@ -3,15 +3,19 @@ Directory Forms API client
 """
 from setuptools import find_packages, setup
 
+with open("README.md", encoding="utf-8") as f:
+    long_description = f.read()
+
+
 setup(
     name='directory_forms_api_client',
-    version='8.0.0',
+    version='9.0.0',
     url='https://github.com/uktrade/directory-forms-api-client',
     license='MIT',
     author='Department for Business and Trade',
     description='Python API client for Directory forms .',
     packages=find_packages(exclude=['tests.*', 'tests']),
-    long_description=open('README.md').read(),
+    long_description=long_description,
     long_description_content_type='text/markdown',
     include_package_data=True,
     install_requires=[
@@ -31,6 +35,8 @@ setup(
             'setuptools',
             'twine',
             'wheel>=0.34.2,<1.0.0',
+            'ruff==0.16.1',
+            'pre-commit-hooks==6.0.0',
             'psycopg2',
         ]
     },
